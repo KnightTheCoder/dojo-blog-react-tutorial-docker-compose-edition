@@ -1,3 +1,5 @@
+# Made following this [guide](https://github.com/iamshaunjp/Complete-React-Tutorial) and [video](https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=1)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
