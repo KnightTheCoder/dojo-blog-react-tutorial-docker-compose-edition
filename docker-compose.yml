@@ -10,7 +10,7 @@ services:
       watch:
         - action: sync
           path: ./Website
-          target: /app
+          target: /webapp
           ignore:
             - Website/node_modules/
             - .git
