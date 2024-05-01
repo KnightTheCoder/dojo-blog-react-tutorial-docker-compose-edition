@@ -1,18 +1,38 @@
 services:
   webapp:
     container_name: webapp_c
-    build: .
+    build: ./Website
+    depends_on:
+      - database
     ports:
       - 3000:3000
     develop:
       watch:
         - action: sync
-          path: .
+          path: ./Website
           target: /app
           ignore:
-            - node_modules/
+            - Website/node_modules/
             - .git
         - action: rebuild
-          path: package.json
+          path: Website/package.json
         - action: rebuild
-          path: Dockerfile
+          path: Website/Dockerfile
+
+  database:
+    container_name: database_c
+    build: ./Database
+    ports:
+      - 8000:8000
+    develop:
+      watch:
+        - action: sync
+          path: ./Database
+          target: /database
+          ignore:
+          - Database/node_modules
+          - .git
+        - action: rebuild
+          path: Database/package.json
+        - action: rebuild
+          path: Database/Dockerfile
