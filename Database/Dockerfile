@@ -1,10 +1,13 @@
-FROM node:18-alpine
+FROM node:lts-alpine
 
 WORKDIR /database
 
+RUN chown node:node ./
+USER node
+
 COPY package*.json .
 
-RUN npm install
+RUN npm ci && npm cache clean --force
 
 COPY . .
 
