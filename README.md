@@ -28,6 +28,8 @@ docker compose down
 
 ### Running on local network
 
-create a hosting.env file
+create a `.env` file
+
 copy `example.env` for reference
+
 insert your ip/domain to REACT_APP_HOST
