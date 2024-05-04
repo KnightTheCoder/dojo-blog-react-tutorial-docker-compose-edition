@@ -2,7 +2,9 @@ import BlogList from './BlogList';
 import useFetch from './useFetch';
 
 const Home = () => {
-  const { data: blogs, isPending, error } = useFetch('http://localhost:8000/blogs');
+  const host = process.env.REACT_APP_HOST;
+
+  const { data: blogs, isPending, error } = useFetch(`http://${host}:8000/blogs`);
 
   return (
     <div className="home">
