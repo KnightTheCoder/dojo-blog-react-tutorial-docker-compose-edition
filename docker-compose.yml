@@ -3,13 +3,13 @@ services:
     container_name: webapp_c
     build:
       context: ./Website
-      target: development
+      target: ${WEBAPP_MODE}
     depends_on:
       - database
     ports:
       - 3000:3000
     env_file:
-      - path: hosting.env
+      - path: .env
         required: true
     develop:
       watch:
@@ -32,7 +32,7 @@ services:
     ports:
       - 8000:8000
     env_file:
-      - path: hosting.env
+      - path: .env
         required: true
     develop:
       watch:
