@@ -11,7 +11,7 @@ RUN npm ci && npm cache clean --force
 
 COPY . .
 
-EXPOSE $WEBSITE_PORT
+EXPOSE 3000
 
 FROM base AS development
 
