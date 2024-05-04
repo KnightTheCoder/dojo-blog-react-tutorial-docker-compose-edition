@@ -8,6 +8,9 @@ services:
       - database
     ports:
       - 3000:3000
+    env_file:
+      - path: hosting.env
+        required: true
     develop:
       watch:
         - action: sync
@@ -28,6 +31,9 @@ services:
     build: ./Database
     ports:
       - 8000:8000
+    env_file:
+      - path: hosting.env
+        required: true
     develop:
       watch:
         - action: sync
