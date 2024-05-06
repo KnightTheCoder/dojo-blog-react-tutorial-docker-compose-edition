@@ -8,7 +8,7 @@ services:
     depends_on:
       - database
     ports:
-      - 3000:3000
+      - ${WEBAPP_PORT}:3000
     develop:
       watch:
         - action: sync
@@ -29,7 +29,7 @@ services:
     image: database:${WEBAPP_ENVIRONMENT}
     build: ./Database
     ports:
-      - 8000:8000
+      - ${DATABASE_PORT}:8000
     develop:
       watch:
         - action: sync
