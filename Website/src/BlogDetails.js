@@ -10,12 +10,16 @@ const BlogDetails = () => {
   } = useFetch(`${process.env.REACT_APP_DATABASE}/blogs/${id}`);
   const history = useHistory();
 
-  const handleClick = () => {
+  const handleClickDelete = () => {
     fetch(`${process.env.REACT_APP_DATABASE}/blogs/${blog.id}`, {
       method: 'DELETE'
     }).then(() => {
       history.push('/');
     });
+  };
+
+  const handleClickEdit = () => {
+    history.push(`/edit/${id}`);
   };
 
   return (
@@ -27,7 +31,8 @@ const BlogDetails = () => {
           <h2>{blog.title}</h2>
           <p>Written by {blog.author}</p>
           <div>{blog.body}</div>
-          <button onClick={handleClick}>delete</button>
+          <button onClick={handleClickDelete}>delete</button>
+          <button onClick={handleClickEdit}>edit</button>
         </article>
       )}
     </div>
