@@ -34,4 +34,4 @@ copy `example.env` for reference to the root directory
 
 copy `example_website.env` for reference to the Website directory
 
-insert your ip/domain to REACT_APP_HOST
+insert your ip/domain to REACT_APP_DATABASE

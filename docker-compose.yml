@@ -3,7 +3,7 @@ services:
     container_name: webapp_c
     build:
       context: ./Website
-      target: ${WEBAPP_MODE}
+      target: ${WEBAPP_ENVIRONMENT}
     depends_on:
       - database
     ports:
