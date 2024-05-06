@@ -7,7 +7,7 @@ const BlogDetails = () => {
     data: blog,
     error,
     isPending
-  } = useFetch(`${process.env.REACT_APP_HOST}:8000/blogs/${id}`);
+  } = useFetch(`${process.env.REACT_APP_DATABASE}/blogs/${id}`);
 
   return (
     <div className="blog-details">
