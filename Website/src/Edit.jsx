@@ -56,7 +56,7 @@ const Edit = () => {
 
   return (
     <div className="create">
-      <h2>Edit blog - {blog.id}</h2>
+      <h2>Edit blog - {id}</h2>
 
       {isFetchPending ? (
         <div>Loading...</div>
