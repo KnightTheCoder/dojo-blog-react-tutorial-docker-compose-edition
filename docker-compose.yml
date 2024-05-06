@@ -1,6 +1,7 @@
 services:
   webapp:
     container_name: webapp_c
+    image: webapp:${WEBAPP_ENVIRONMENT}
     build:
       context: ./Website
       target: ${WEBAPP_ENVIRONMENT}
@@ -25,6 +26,7 @@ services:
 
   database:
     container_name: database_c
+    image: database:${WEBAPP_ENVIRONMENT}
     build: ./Database
     ports:
       - 8000:8000
