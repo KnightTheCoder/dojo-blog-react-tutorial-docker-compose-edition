@@ -34,6 +34,18 @@
   color: #f1356d;
 }
 
+.navbar button {
+  position: fixed;
+  right: 30px;
+  border: 0;
+  border-radius: 100%;
+  padding: 4px;
+  background-color: #333;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
 .content {
   max-width: 600px;
   margin: 40px auto;
@@ -116,4 +128,22 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.dark {
+  background-color: #333;
+  color: #ddd;
+}
+
+.dark * {
+  color: #ddd;
+}
+
+.dark .navbar button {
+  background-color: #ddd;
+}
+
+.create input, .create textarea, .create select {
+  background-color: #333;
+  color: #ddd;
 }
