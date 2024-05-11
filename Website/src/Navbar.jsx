@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import useLocalStorage from './useLocalStorage';
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(false);
+  // const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useLocalStorage(false);
 
-  const handleThemeSwitch = () => {
+  const switchTheme = () => {
     setIsDark((prev) => !prev);
   };
 
@@ -22,7 +24,7 @@ const Navbar = () => {
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/create">New Blog</Link>
-        <button onClick={handleThemeSwitch}></button>
+        <button onClick={switchTheme}></button>
       </div>
     </nav>
   );
