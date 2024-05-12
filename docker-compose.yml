@@ -21,8 +21,6 @@ services:
           path: Website/package.json
         - action: rebuild
           path: Website/Dockerfile
-        - action: rebuild
-          path: ./docker-compose.yml
 
   database:
     container_name: database_c
@@ -31,7 +29,7 @@ services:
     ports:
       - ${DATABASE_PORT}:8000
     volumes:
-      - database:/database/data:rw
+      - database_volume:/database/data:rw
     develop:
       watch:
         - action: sync
@@ -45,8 +43,6 @@ services:
           path: Database/package.json
         - action: rebuild
           path: Database/Dockerfile
-        - action: rebuild
-          path: ./docker-compose.yml
 
 volumes:
-  database:
+  database_volume:
