@@ -15,7 +15,7 @@ services:
           path: ./Website
           target: /webapp
           ignore:
-            - Website/node_modules/
+            - node_modules
             - .git
         - action: rebuild
           path: Website/package.json
@@ -30,15 +30,20 @@ services:
     build: ./Database
     ports:
       - ${DATABASE_PORT}:8000
+    volumes:
+      - ./Database/data:/database/data:rw
     develop:
       watch:
         - action: sync
           path: ./Database
           target: /database
           ignore:
-          - Database/node_modules
+          - node_modules
+          - data
           - .git
         - action: rebuild
           path: Database/package.json
         - action: rebuild
           path: Database/Dockerfile
+        - action: rebuild
+          path: ./docker-compose.yml
