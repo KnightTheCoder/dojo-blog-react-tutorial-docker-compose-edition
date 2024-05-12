@@ -194,6 +194,10 @@
   color: #fff;
 }
 
+.dark .blog-details dialog button#delYes {
+  background: rgb(7, 155, 27);
+}
+
 .dark .blog-details dialog button:hover {
   box-shadow: 1px 3px 5px #fff;
 }
