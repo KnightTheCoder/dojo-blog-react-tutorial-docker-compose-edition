@@ -4,7 +4,7 @@ import useLocalStorage from './useLocalStorage';
 
 const Navbar = () => {
   // const [isDark, setIsDark] = useState(false);
-  const [isDark, setIsDark] = useLocalStorage(false);
+  const [isDark, setIsDark] = useLocalStorage('isDark', false);
 
   const switchTheme = () => {
     setIsDark((prev) => !prev);

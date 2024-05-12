@@ -95,6 +95,39 @@
   cursor: pointer;
 }
 
+.blog-details dialog {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-20%, -50%);
+  border: 1px solid #ddd;
+  box-shadow: 3px 3px 5px #111;
+  border-radius:15%;
+}
+
+.blog-details dialog p {
+  margin-bottom: 1em;
+}
+
+.blog-details dialog button {
+  background: rgb(39, 183, 226);
+  color: #111;
+  padding: 10px 10px;
+}
+
+.blog-details dialog button:hover {
+  box-shadow: 1px 3px 5px #000;
+}
+
+.blog-details dialog button#delYes {
+  margin-right: 15px;
+}
+
+.blog-details dialog button#delNo {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
 /* create new blog form */
 .create {
   max-width: 400px;
@@ -131,6 +164,8 @@
   cursor: pointer;
 }
 
+/* Dark mode */
+
 .dark {
   background-color: #333;
   color: #ddd;
@@ -147,4 +182,19 @@
 .dark .create input, .dark .create textarea, .dark .create select {
   background-color: #333;
   color: #ddd;
+}
+
+.dark .blog-details dialog {
+  background: #333;
+  border: 1px solid #bbb;
+  box-shadow: 1px 3px 5px #aaa;
+}
+
+.dark .blog-details dialog button {
+  background: rgb(32, 109, 224);
+  color: #fff;
+}
+
+.dark .blog-details dialog button:hover {
+  box-shadow: 1px 3px 5px #fff;
 }
