@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import handleInputChange from './onChange';
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -39,18 +40,18 @@ const Create = () => {
           type="text"
           required
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={handleInputChange(setTitle)}
         />
         <label>Blog body</label>
         <textarea
           required
           value={body}
-          onChange={(e) => setBody(e.target.value)}
+          onChange={handleInputChange(setBody)}
         ></textarea>
         <label>Blog author</label>
         <select
           value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          onChange={handleInputChange(setAuthor)}
         >
           <option value="mario">mario</option>
           <option value="yoshi">yoshi</option>

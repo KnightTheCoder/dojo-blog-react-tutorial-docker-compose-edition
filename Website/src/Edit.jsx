@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import useFetch from './useFetch';
+import handleInputChange from './onChange';
 
 const Edit = () => {
   const { id } = useParams();
@@ -69,20 +70,20 @@ const Edit = () => {
             type="text"
             required
             value={blog.title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={handleInputChange(setTitle)}
           />
 
           <label>Blog body</label>
           <textarea
             required
             value={blog.body}
-            onChange={(e) => setBody(e.target.value)}
+            onChange={handleInputChange(setBody)}
           ></textarea>
 
           <label>Blog author</label>
           <select
             value={blog.author}
-            onChange={(e) => setAuthor(e.target.value)}
+            onChange={handleInputChange(setAuthor)}
           >
             <option value="mario">mario</option>
             <option value="yoshi">yoshi</option>
