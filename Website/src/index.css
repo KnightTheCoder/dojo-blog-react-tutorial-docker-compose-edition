@@ -110,7 +110,6 @@
 }
 
 .blog-details dialog button {
-  background: rgb(39, 183, 226);
   color: #111;
   padding: 10px 10px;
 }
@@ -120,6 +119,7 @@
 }
 
 .blog-details dialog button#delYes {
+  background: rgb(24, 212, 65);
   margin-right: 15px;
 }
 
@@ -191,7 +191,6 @@
 }
 
 .dark .blog-details dialog button {
-  background: rgb(32, 109, 224);
   color: #fff;
 }
 
