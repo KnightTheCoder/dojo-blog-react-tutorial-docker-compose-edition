@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import handleInputChange from './onChange';
+import handleInputChange from './handleInputChange';
 
 const Create = () => {
   const [title, setTitle] = useState('');

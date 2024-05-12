@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import useFetch from './useFetch';
-import handleInputChange from './onChange';
+import handleInputChange from './handleInputChange';
 
 const Edit = () => {
   const { id } = useParams();
@@ -10,11 +10,6 @@ const Edit = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('mario');
-  const [blog, setBlog] = useState({
-    title: '',
-    body: '',
-    author: 'mario'
-  });
   const [isUpdatePending, setIsUpdatePending] = useState(false);
 
   const {
@@ -25,20 +20,17 @@ const Edit = () => {
 
   useEffect(() => {
     if (data) {
-      setBlog(data);
       setTitle(data.title);
       setBody(data.body);
       setAuthor(data.author);
     }
   }, [data]);
 
-  useEffect(() => {
-    setBlog({
-      title,
-      body,
-      author
-    });
-  }, [title, body, author]);
+  const blog = useMemo(() => ({
+    title,
+    body,
+    author
+  }), [title, body, author])
 
   const handleSubmit = (e) => {
     e.preventDefault();
